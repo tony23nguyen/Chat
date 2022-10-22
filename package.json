@@ -1,0 +1,28 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tony23nguyen/Chat.git"
+  },
+  "author": "Nhac Ton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tony23nguyen/Chat/issues"
+  },
+  "homepage": "https://github.com/tony23nguyen/Chat#readme",
+  "dependencies": {
+    "@chakra-ui/react": "^2.3.6",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "framer-motion": "^7.6.1",
+    "nodemon": "^2.0.20"
+  }
+}
