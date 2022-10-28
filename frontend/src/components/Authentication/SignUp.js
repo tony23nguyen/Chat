@@ -1,4 +1,4 @@
-import {React,useState} from 'react';
+import { React, useState } from "react";
 import {
   FormControl,
   FormLabel,
@@ -8,9 +8,9 @@ import {
   InputGroup,
   InputRightElement,
   useToast,
-} from '@chakra-ui/react'
-import axios from 'axios'
-import {useHistory} from 'react-router-dom'
+} from "@chakra-ui/react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 //test
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -55,7 +55,9 @@ const Signup = () => {
       //   },
       // };
       // console.log(name, email, password, 'try')
-      const { data } = await axios.post("/api/user",{name,email,password,pic,},
+      const { data } = await axios.post(
+        "/api/user",
+        { name, email, password, pic }
         // config
       );
       toast({
@@ -66,11 +68,9 @@ const Signup = () => {
         position: "bottom",
       });
 
-
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
       history.push("/chats");
-
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -131,7 +131,7 @@ const Signup = () => {
 
   return (
     <VStack spacing="5px">
-    {/* Name Field */}
+      {/* Name Field */}
       <FormControl id="first-name" isRequired>
         <FormLabel>Name</FormLabel>
         <Input
@@ -149,7 +149,7 @@ const Signup = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-      {/* password Field */}
+        {/* password Field */}
       </FormControl>
       <FormControl id="password" isRequired>
         <FormLabel>Password</FormLabel>

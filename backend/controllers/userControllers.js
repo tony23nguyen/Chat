@@ -26,7 +26,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password, pic } = req.body;
 
   if (!name || !email || !password) {
-    console.log(req.body)
+    console.log(req.body);
     res.status(400);
     throw new Error("Please fill fields(controller)");
   }
@@ -82,6 +82,5 @@ const authUser = asyncHandler(async (req, res) => {
     throw new Error("Invalid Email or Password");
   }
 });
-
 
 module.exports = { allUsers, registerUser, authUser };

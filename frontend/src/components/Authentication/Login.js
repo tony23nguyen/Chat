@@ -1,4 +1,4 @@
-import {React,useState} from 'react';
+import { React, useState } from "react";
 import {
   FormControl,
   FormLabel,
@@ -7,17 +7,17 @@ import {
   Button,
   InputGroup,
   InputRightElement,
-  useToast
-} from '@chakra-ui/react'
-import {useHistory} from 'react-router-dom'
-import axios from 'axios';
+  useToast,
+} from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const toast = useToast();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const history = useHistory();
@@ -125,4 +125,4 @@ const Login = () => {
   );
 };
 
-export default Login
+export default Login;

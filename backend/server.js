@@ -1,26 +1,24 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
-const userRoutes = require('./routes/userRoutes');
-const chatRoutes = require('./routes/chatRoutes');
-const { notFound, errorHandler } = require('./middleware/errorMiddleware');
+const express = require("express");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const userRoutes = require("./routes/userRoutes");
+const chatRoutes = require("./routes/chatRoutes");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
-const app = express()
-dotenv.config()
-connectDB()
-app.use(express.json())
+const app = express();
+dotenv.config();
+connectDB();
+app.use(express.json());
 
-app.get('/', (req,res) =>{
-    res.send('api is running');
+app.get("/", (req, res) => {
+  res.send("api is running");
+});
 
-})
+app.use("/api/user", userRoutes);
+app.use("/api/chat", chatRoutes);
 
-app.use('/api/user', userRoutes);
-app.use('/api/chat', chatRoutes);
+app.use(notFound);
+app.use(errorHandler);
 
-app.use(notFound)
-app.use(errorHandler)
-
-const PORT = process.env.PORT||5000
-app.listen(PORT, console.log(`server started on port ${PORT}`))
-
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, console.log(`server started on port ${PORT}`));
