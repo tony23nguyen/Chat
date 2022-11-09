@@ -1,12 +1,13 @@
-import { React, createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const ChatContext = createContext();
 
 const ChatProvider = ({ children }) => {
-  const [user, setUser] = useState();
   const [selectedChat, setSelectedChat] = useState();
-  const [chats, setChats] = useState([]);
+  const [user, setUser] = useState();
+  // const [notification, setNotification] = useState([]);
+  const [chats, setChats] = useState();
 
   const history = useHistory();
 
@@ -15,13 +16,23 @@ const ChatProvider = ({ children }) => {
     setUser(userInfo);
 
     if (!userInfo) {
-      history.pushState("/");
+      history.push("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history]);
 
   return (
     <ChatContext.Provider
-      value={{ user, setUser, selectedChat, setSelectedChat, chats, setChats }}
+      value={{
+        selectedChat,
+        setSelectedChat,
+        user,
+        setUser,
+        // notification,
+        // setNotification,
+        chats,
+        setChats,
+      }}
     >
       {children}
     </ChatContext.Provider>

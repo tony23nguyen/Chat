@@ -38,16 +38,16 @@ const Login = () => {
 
     // console.log(email, password);
     try {
-      const config = {
-        headers: {
-          "content-type": "application/json",
-        },
-      };
+      // const config = {
+      //   headers: {
+      //     "content-type": "application/json",
+      //   },
+      // };
 
       const { data } = await axios.post(
         "/api/user/login",
-        { email, password },
-        config
+        { email, password }
+        // config
       );
 
       // console.log(JSON.stringify(data));
