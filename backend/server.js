@@ -13,9 +13,9 @@ dotenv.config();
 connectDB();
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("api is running");
-});
+// app.get("/", (req, res) => {
+//   res.send("api is running");
+// });
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
