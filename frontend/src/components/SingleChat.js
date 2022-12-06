@@ -19,7 +19,7 @@ import { ChatState } from "../Context/ChatProvider";
 
 // const ENDPOINT = "http://localhost:5000";
 
-const ENDPOINT = "https://chatbubblenhacton.herokuapp.com"; //-> After deployment
+const ENDPOINT = "https://chatbubblenhacton.onrender.com"; //-> After deployment
 
 var socket, selectedChatCompare;
 
